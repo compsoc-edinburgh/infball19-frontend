@@ -1,0 +1,200 @@
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i');
+
+body {
+	/* "premium dark" */
+	/*background-image: linear-gradient(35deg, #434343 0%, black 100%); 
+	background-image: linear-gradient(to top, #09203f 0%, #537895 100%); 
+	background-image: linear-gradient(60deg, #282a36 0%, #303341 100%); */
+ 	background-image: url(/assets/bg.png);
+	background-size: 25%;
+	margin: 0;
+	min-height: 100vh;
+
+	overflow-x: hidden;
+
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* JUMBOTRON CODE */
+.jumbotron {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (min-width: 765px) {
+	.jumbotron > img#infball-logo {
+		width: 60vw;
+		height: auto;
+	}
+}
+
+/* FORM */
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	perspective: 1500px;
+	margin-bottom: 100px;
+}
+
+.form-flipper {
+	max-width: 95vw;
+
+	position: relative;
+
+	transition: transform 0.75s cubic-bezier(0,0,0.3,1);
+}
+
+.form-flipper--flipped {
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;
+}
+
+@media (min-width: 765px) {
+	.form-flipper {
+		max-width: 70vw;
+	}
+}
+
+form#ticketform {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	padding: 20px;
+	background-color: white;
+}
+
+@media (min-width: 765px) {
+	form#ticketform {
+		min-width: 65vw;
+	}
+}
+.form-back, .form-front {
+	background-color: white;
+	transform-style: preserve-3d;
+
+	backface-visibility: hidden;
+}
+
+hr {
+	width: 100%;
+	margin: 2em 0 1em 0;
+	border: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.54);
+}
+
+.margin-top-1em {
+	margin-top: 1em;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.form-back {
+	background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 300px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	transform: rotateY(180deg);
+}
+
+.spinner, .spinner-large {
+	border: 3px solid black;
+	animation: spin 1s linear 0s infinite;
+	width: 80px;
+	height: 80px;
+	border-right-color: rgba(0,0,0,0);
+	position: absolute;
+
+	backface-visibility: hidden;
+	border-radius: 40px;
+}
+
+.spinner-large {
+	animation: spin 1s linear 0s infinite reverse;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+
+	backface-visibility: hidden;
+	border-radius: 50px;
+
+}
+
+.checkmark {
+	height: 80px;
+	width: 40px;
+
+	border: 8px solid green;
+	border-left-color: rgba(0,0,0,0);
+	border-top-color: rgba(0,0,0,0);
+
+	transform: rotateZ(45deg);
+	backface-visibility: hidden;
+
+}
+
+.preloader-wrapper {
+	backface-visibility: hidden;
+}
+
+
+.form-outcome {
+	display: flex;
+	
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.form-outcome--hidden {
+	display: none;
+}
+
+
+.xmark-container {
+	position: relative;
+
+	height: 80px;
+	width: 80px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1em;
+}
+
+.xmark, .xmark-alt {
+	position: absolute;
+	top: 36px;
+	left: 0;
+	right: 0;
+
+	border: 4px solid red;
+
+	transform: rotateZ(45deg);
+}
+
+.xmark-alt {
+	transform: rotateZ(-45deg);
+
+}
+
+

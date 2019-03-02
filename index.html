@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- please don't use IE -->
+
+		<meta property="og:title" content="InfBall 2019" />
+		<meta property="og:description" content="InfBall returns for 2019! April 6th at the Balmoral."
+										/>
+		<meta property="og:image" content="" />
+		<meta name="theme-color" content="#272A2B">
+		<link href="index.css" type="text/css" rel="stylesheet">
+
+		<title>InfBall 2019</title>
+
+
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</head>
+
+	<body>
+		<div class="jumbotron">
+			<img id="infball-logo" src="assets/title.svg"></img>
+		</div>
+
+		<div class="information">
+
+		</div>
+
+		<div class="form-container">
+			<div class="form-flipper">
+				<div class="form-front z-depth-4">
+					<form action="" method="post" id="ticketform">
+						<h4> Purchase a ticket </h4>
+						<h5> Basic information </h5>
+						<div class="input-field">
+							<input type="text" value="" placeholder="Infer Matics" id="full-name" required>
+							<label for="full-name">Full Name</label>
+						</div>
+
+						<div class="input-field">
+							<input type="text" placeholder="s1234567" value="" name="uun" id="uun">
+							<label for="uun">UUN</label>
+							<span class="helper-text">You do not need to provide your UUN if you are not a member of The University of Edinburgh.</span>
+						</div>
+
+						<div class="input-field">
+							<label for="email">Email address</label>
+							<input type="text" class="text" value="" name="" id="email" placeholder="s1234567@ed.ac.uk"
+																						required>
+							<span class="helper-text">We will only share this email address with our payment provider.</span>
+						</div>
+
+						<div class="input-field">
+							<label>
+								<input type="checkbox" />
+								<span>I declare that I am over the age of 18.</span>
+							</label>
+						</div>
+
+						<div class="input-field">
+							<label>
+								<input type="checkbox" />
+								<span>Place me at the alcohol-free table.</span>
+							</label>
+						</div>
+
+						<p><br>Note that there are a very limited number of non-alcoholic
+						tickets <b id="nonalcohol-remaining">(10 remaining)</b>,
+						as they are seats at a separate, designated table. IDs
+						will be checked at the door. Contact <a href="mailto:infball@comp-soc.com">infball@comp-soc.com</a>                        for more information.</p>
+
+						<div class="input-field">
+							<h5> Dietary information </h5>
+
+							<b> Included in your £40 ticket </b>
+
+							<div class="row margin-top-1em">
+								<div class="col s6">
+									<label>
+										<input type="checkbox" checked="checked" disabled="disabled" />
+										<span>Red carpet arrival</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox" checked="checked" disabled="disabled" />
+										<span>Glass of prosecco on arrival</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox" checked="checked" disabled="disabled" />
+										<span>Three course meal</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox" checked="checked" disabled="disabled" />
+										<span>Complimentary wine with meal</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox" checked="checked" disabled="disabled" />
+										<span>Ceilidh</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox" checked="checked" disabled="disabled" />
+										<span>Photography</span>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="input-field">
+							<b> Dietary requirements </b>
+
+							<div class="row margin-top-1em">
+								<div class="col s6">
+									<label>
+										<input type="checkbox"/>
+										<span>Vegetarian</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox"/>
+										<span>Vegan</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox"/>
+										<span>Gluten-free</span>
+									</label>
+								</div>
+								<div class="col s6">
+									<label>
+										<input type="checkbox"/>
+										<span>Lactose-free</span>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="input-field">
+							<textarea class="materialize-textarea" name="othernotes" id="othernotes" placeholder="Please tell us if you have any allergies or any other special requirements."></textarea>
+							<label for="othernotes">Other notes</label>
+						</div>
+
+
+
+						<div class="row">
+							<div class="no-padding col s12">
+								<h5> Payments </h5>
+								<p><b>Tickets are £40.</b> All major cards accepted.</p>
+							</div>
+							<div class="input-field col s8">
+								<input name="number" type="text" id="number" value="" class="validate" pattern="[0-9]+"
+																									   required>
+								<label for="number">Card Number</label>
+							</div>
+							<div class="input-field col s4">
+								<input name="cvc" type="text" id="cvc" value="" class="validate" pattern="[0-9]+"
+																								 required>
+								<label for="cvc">CVC</label>
+							</div>
+							<div class="input-field col s3">
+								<input name="expmonth" type="text" id="expmonth" value="" class="validate" pattern="[0-9][0-9]"
+																										   required>
+								<label for="exponth">MM</label>
+								<div class="helper-text">Expiration month.</div>
+							</div>
+							<div class="input-field col s3">
+								<input name="expyear" type="text" id="expyear" value="" class="validate" pattern="[0-9][0-9]"
+																										 required>
+								<label for="expyear">YY</label>
+								<div class="helper-text">Expiration year.</div>
+							</div>
+							<div class="input-field col s6">
+								<input name="accesscode" type="text" id="accesscode" value="" class="validate">
+								<label for="accesscode">Access code</label>
+								<div class="helper-text">If you have an access code, paste it here.</div>
+							</div>
+						</div>
+
+						<button class="btn-large waves-effect waves-light" type="submit" name="action">Submit</button>
+					</form>
+				</div>
+				<div class="form-back">
+					<div class="preloader-wrapper big active">
+						<div class="spinner-layer spinner-blue">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+						<div class="spinner-layer spinner-red">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+
+						<div class="spinner-layer spinner-yellow">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+
+						<div class="spinner-layer spinner-green">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-outcome form-outcome--hidden form-outcome--successful">
+						<div class="checkmark"></div>
+						<p class="flow-text container"><br>Your payment was successful.<br>You should receive a confirmation
+						email shortly.</p>
+					</div>
+					<div class="form-outcome form-outcome--hidden form-outcome--unsuccessful">
+						<div class="xmark-container">
+							<div class="xmark"></div>
+							<div class="xmark-alt"></div>
+						</div>
+						<p class="flow-text container">Your payment was unsuccessful.<br><a href="/">Click to try again</a>, or <a href="mailto:infball@comp-soc.com">contact us</a>.</p>
+					</div>
+				</div>
+			</div>
+			<script src="index.js" type="text/javascript"></script>
+	</body>
+
+</html>
