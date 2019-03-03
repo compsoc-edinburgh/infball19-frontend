@@ -9,8 +9,6 @@ document.querySelector('[type="submit"]').addEventListener('click', e => {
 	})
 	setTimeout(() => document.querySelector('.form-flipper').classList.add('form-flipper--flipped'), 750)
 })
-
-
 document.querySelector('#ticketform').addEventListener('submit', e => {
 	e.preventDefault()
 	console.log('clicked submit')

@@ -46,23 +46,15 @@
 						</div>
 
 						<div class="input-field">
-							<input type="text" placeholder="s1234567" value="" name="uun" id="uun">
+							<input type="text" placeholder="s1234567" value="" name="uun" id="uun" required>
 							<label for="uun">UUN</label>
-							<span class="helper-text">You do not need to provide your UUN if you are not a member of The University of Edinburgh.</span>
+							<span class="helper-text">If you are not a member of the university of Edinburgh and do not have a uun, please get in contact with us at <a href="mailto:infball@comp-soc.com">infball@comp-soc.com</a>.</span>
 						</div>
 
 						<div class="input-field">
 							<label for="email">Email address</label>
-							<input type="text" class="text" value="" name="" id="email" placeholder="s1234567@ed.ac.uk"
-																						required>
+							<input type="text" class="text" value="" name="" id="email" placeholder="s1234567@ed.ac.uk" required>
 							<span class="helper-text">We will only share this email address with our payment provider.</span>
-						</div>
-
-						<div class="input-field">
-							<label>
-								<input type="checkbox" />
-								<span>I declare that I am over the age of 18.</span>
-							</label>
 						</div>
 
 						<div class="input-field">
@@ -72,17 +64,15 @@
 							</label>
 						</div>
 
-						<p><br>Note that there are a very limited number of non-alcoholic
-						tickets <b id="nonalcohol-remaining">(10 remaining)</b>,
-						as they are seats at a separate, designated table. IDs
-						will be checked at the door. Contact <a href="mailto:infball@comp-soc.com">infball@comp-soc.com</a>                        for more information.</p>
+						<p><br>Note that there are a very limited number of tickets for alcohol free tables <b id="nonalcohol-remaining">(10 remaining)</b>,
+						as they are seats at a separate, designated table. Contact <a href="mailto:infball@comp-soc.com">infball@comp-soc.com</a> for more information.</p>
 
 						<div class="input-field">
 							<h5> Dietary information </h5>
 
-							<b> Included in your £40 ticket </b>
+							<b> Included in your £30 ticket </b>
 
-							<div class="row margin-top-1em">
+							<div class="row margin-top-1em" id = "included">
 								<div class="col s6">
 									<label>
 										<input type="checkbox" checked="checked" disabled="disabled" />
@@ -122,6 +112,17 @@
 							</div>
 						</div>
 
+							<p>The set menu for this event includes:</p>
+							<div class="col s6 offset-s3">
+								<ul>
+									<li> starter </li>
+									<li> main </li>
+									<li> dessert</li>
+									<li> Tea and Shortbread</li>
+								</ul>
+							</div>
+							<p> There will also be alternatives provided for those with dietary requirements, however the specifics of these have not been finalised yet. We will announce this as soon as we know but for now let us know about any dietary requirements you have:</p>
+
 						<div class="input-field">
 							<b> Dietary requirements </b>
 
@@ -158,12 +159,18 @@
 							<label for="othernotes">Other notes</label>
 						</div>
 
+						<div class="input-field col s6">
+							<input name="invitecode" type="text" id="invitecode" value="" class="validate">
+							<label for="invitecode">Invite code</label>
+							<div class="helper-text">If you have an invite code, please enter it here.</div>
+						</div>
+
 
 
 						<div class="row">
 							<div class="no-padding col s12">
 								<h5> Payments </h5>
-								<p><b>Tickets are £40.</b> All major cards accepted.</p>
+								<p><b>Tickets are £30.</b> All major cards accepted.</p>
 							</div>
 							<div class="input-field col s8">
 								<input name="number" type="text" id="number" value="" class="validate" pattern="[0-9]+"
@@ -171,30 +178,25 @@
 								<label for="number">Card Number</label>
 							</div>
 							<div class="input-field col s4">
-								<input name="cvc" type="text" id="cvc" value="" class="validate" pattern="[0-9]+"
+								<input name="cvc" type="text" id="cvc" value="" class="validate" pattern="[0-9][0-9][0-9]"
 																								 required>
 								<label for="cvc">CVC</label>
 							</div>
-							<div class="input-field col s3">
+							<div class="input-field col s6">
 								<input name="expmonth" type="text" id="expmonth" value="" class="validate" pattern="[0-9][0-9]"
 																										   required>
 								<label for="exponth">MM</label>
 								<div class="helper-text">Expiration month.</div>
 							</div>
-							<div class="input-field col s3">
+							<div class="input-field col s6">
 								<input name="expyear" type="text" id="expyear" value="" class="validate" pattern="[0-9][0-9]"
 																										 required>
 								<label for="expyear">YY</label>
 								<div class="helper-text">Expiration year.</div>
 							</div>
-							<div class="input-field col s6">
-								<input name="accesscode" type="text" id="accesscode" value="" class="validate">
-								<label for="accesscode">Access code</label>
-								<div class="helper-text">If you have an access code, paste it here.</div>
-							</div>
 						</div>
 
-						<button class="btn-large waves-effect waves-light" type="submit" name="action">Submit</button>
+						<button class="btn-large waves-effect waves-light" type="submit" name="action" >Submit</button>
 					</form>
 				</div>
 				<div class="form-back">
