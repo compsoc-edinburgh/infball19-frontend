@@ -107,7 +107,7 @@ const validateForm = async () => {
 	if (resp.status === 'success') {
 		return true
 	} else {
-		formFailure(r.message)
+		formFailure(resp.message)
 		return false
 	}
 }
