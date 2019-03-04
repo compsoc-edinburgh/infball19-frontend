@@ -129,6 +129,8 @@ form.addEventListener('submit', async (e) => {
 	if (error) {
 		const displayError = document.querySelector('#card-errors')
 		displayError.textContent = error.message
+		setTimeout(() => document.querySelector('.form-flipper').classList.remove('form-flipper--flipped'), 800)
+
 	} else {
 		chargeForm(token)
 	}
