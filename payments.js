@@ -50,10 +50,12 @@ const collectAndSubmit = (token) => {
 
 	const clearIndefinite = () => document.querySelector('.form-outcome--indefinite').remove()
 	const onsuccess = (id) => {
+		clearIndefinite()
 		document.querySelector('.form-outcome--successful').classList.remove('form-outcome--hidden')
 		document.querySelector('#success-id').textContent = id
 	}
 	const onfailure = (msg) => {
+		clearIndefinite()
 		document.querySelector('.form-outcome--unsuccessful').classList.remove('form-outcome--hidden')
 		document.querySelector('#failure-message').textContent = msg
 	}
