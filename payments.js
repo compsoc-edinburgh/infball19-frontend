@@ -96,7 +96,7 @@ const validateForm = async () => {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify('fields')
+			body: JSON.stringify(fields)
 		}).then(r => r.json())
 	} catch (e) {
 		console.warn(e)
