@@ -18,6 +18,9 @@
 		<title>InfBall 2019</title>
 
 
+
+		<script src="https://js.stripe.com/v3/"></script>
+
 		<!-- Compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -41,7 +44,7 @@
 						<h4> Purchase a ticket </h4>
 						<h5> Basic information </h5>
 						<div class="input-field">
-							<input type="text" value="" placeholder="Infer Matics" id="full-name" required>
+							<input type="text" value="" placeholder="Infer Matics" id="full-name" required name="full-name">
 							<label for="full-name">Full Name</label>
 						</div>
 
@@ -53,13 +56,13 @@
 
 						<div class="input-field">
 							<label for="email">Email address</label>
-							<input type="text" class="text" value="" name="" id="email" placeholder="s1234567@ed.ac.uk" required>
+							<input type="email" class="text" value="" name="email" id="email" placeholder="s1234567@ed.ac.uk" required>
 							<span class="helper-text">We will only share this email address with our payment provider.</span>
 						</div>
 
 						<div class="input-field">
 							<label>
-								<input type="checkbox" />
+								<input type="checkbox" name="noalcohol"/>
 								<span>Place me at the alcohol-free table.</span>
 							</label>
 						</div>
@@ -112,16 +115,16 @@
 							</div>
 						</div>
 
-							<p>The set menu for this event includes:</p>
-							<div class="col s6 offset-s3">
-								<ul>
-									<li> starter </li>
-									<li> main </li>
-									<li> dessert</li>
-									<li> Tea and Shortbread</li>
-								</ul>
-							</div>
-							<p> There will also be alternatives provided for those with dietary requirements, however the specifics of these have not been finalised yet. We will announce this as soon as we know but for now let us know about any dietary requirements you have:</p>
+						<p>The set menu for this event includes:</p>
+						<div class="col s6 offset-s3">
+							<ul>
+								<li> starter </li>
+								<li> main </li>
+								<li> dessert</li>
+								<li> Tea and Shortbread</li>
+							</ul>
+						</div>
+						<p> There will also be alternatives provided for those with dietary requirements, however the specifics of these have not been finalised yet. We will announce this as soon as we know but for now let us know about any dietary requirements you have:</p>
 
 						<div class="input-field">
 							<b> Dietary requirements </b>
@@ -129,25 +132,25 @@
 							<div class="row margin-top-1em">
 								<div class="col s6">
 									<label>
-										<input type="checkbox"/>
+										<input type="checkbox" name="vegetarian"/>
 										<span>Vegetarian</span>
 									</label>
 								</div>
 								<div class="col s6">
 									<label>
-										<input type="checkbox"/>
+										<input type="checkbox" name="vegan"/>
 										<span>Vegan</span>
 									</label>
 								</div>
 								<div class="col s6">
 									<label>
-										<input type="checkbox"/>
+										<input type="checkbox" name="glutenfree"/>
 										<span>Gluten-free</span>
 									</label>
 								</div>
 								<div class="col s6">
 									<label>
-										<input type="checkbox"/>
+										<input type="checkbox" name="lactosefree"/>
 										<span>Lactose-free</span>
 									</label>
 								</div>
@@ -165,34 +168,15 @@
 							<div class="helper-text">If you have an invite code, please enter it here.</div>
 						</div>
 
-
-
 						<div class="row">
 							<div class="no-padding col s12">
 								<h5> Payments </h5>
 								<p><b>Tickets are £30.</b> All major cards accepted.</p>
 							</div>
-							<div class="input-field col s8">
-								<input name="number" type="text" id="number" value="" class="validate" pattern="[0-9]+"
-																									   required>
-								<label for="number">Card Number</label>
-							</div>
-							<div class="input-field col s4">
-								<input name="cvc" type="text" id="cvc" value="" class="validate" pattern="[0-9][0-9][0-9]"
-																								 required>
-								<label for="cvc">CVC</label>
-							</div>
-							<div class="input-field col s6">
-								<input name="expmonth" type="text" id="expmonth" value="" class="validate" pattern="[0-9][0-9]"
-																										   required>
-								<label for="exponth">MM</label>
-								<div class="helper-text">Expiration month.</div>
-							</div>
-							<div class="input-field col s6">
-								<input name="expyear" type="text" id="expyear" value="" class="validate" pattern="[0-9][0-9]"
-																										 required>
-								<label for="expyear">YY</label>
-								<div class="helper-text">Expiration year.</div>
+							<div class="col s12">
+								<label for="card-element">Credit or debit cards. All major cards accepted.</label>
+								<div id="card-element"></div>
+								<div role="alert" id="card-errors"></div>
 							</div>
 						</div>
 
@@ -200,7 +184,7 @@
 					</form>
 				</div>
 				<div class="form-back">
-					<div class="preloader-wrapper big active">
+					<div class="preloader-wrapper big active form-outcome--indefinite">
 						<div class="spinner-layer spinner-blue">
 							<div class="circle-clipper left">
 								<div class="circle"></div>
@@ -252,17 +236,18 @@
 					<div class="form-outcome form-outcome--hidden form-outcome--successful">
 						<div class="checkmark"></div>
 						<p class="flow-text container"><br>Your payment was successful.<br>You should receive a confirmation
-						email shortly.</p>
+						email shortly.<br>Your order number is <span id="success-id"></span>.</p>
 					</div>
 					<div class="form-outcome form-outcome--hidden form-outcome--unsuccessful">
 						<div class="xmark-container">
 							<div class="xmark"></div>
 							<div class="xmark-alt"></div>
 						</div>
-						<p class="flow-text container">Your payment was unsuccessful.<br><a href="/">Click to try again</a>, or <a href="mailto:infball@comp-soc.com">contact us</a>.</p>
+						<p class="flow-text container">Your payment was unsuccessful.<br><span id="failure-message"></span><br><a href="/">Click to try again</a>, or <a href="mailto:infball@comp-soc.com">contact us</a>.</p>
 					</div>
 				</div>
 			</div>
+			<script defer src="payments.js" type="text/javascript"></script>
 			<script src="index.js" type="text/javascript"></script>
 	</body>
 

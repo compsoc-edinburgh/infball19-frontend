@@ -107,7 +107,8 @@ hr {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 300px;
+	min-height: 300px;
+	padding-bottom: 2em;
 
 	display: flex;
 	flex-direction: column;
