@@ -1,7 +1,5 @@
 // pk_test_WLvFPL1mC9cr94Sjj6wxvBPN
 
-const API_URL = '/'
-
 const stripe   = Stripe('pk_test_WLvFPL1mC9cr94Sjj6wxvBPN')
 const elements = stripe.elements()
 const card     = elements.create('card', {
