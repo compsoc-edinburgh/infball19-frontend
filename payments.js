@@ -63,7 +63,6 @@ const collectAndSubmit = (token) => {
 
 	fetch('/charge', {
 		method: 'POST',
-		mode: 'no-cors',
 		cache: 'no-cache',
 		headers: {
 			'Content-Type': 'application/json'
