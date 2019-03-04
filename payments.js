@@ -103,7 +103,7 @@ const validateForm = async () => {
 		formFailure('A server error occurred.')
 	}
 
-	if (r.status === 'success') {
+	if (resp.status === 'success') {
 		return true
 	} else {
 		formFailure(r.message)
