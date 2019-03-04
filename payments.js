@@ -1,6 +1,6 @@
-// pk_test_WLvFPL1mC9cr94Sjj6wxvBPN
+// pk_live_RDs7HA8mAysGHsUGXsiFxslE
 
-const stripe   = Stripe('pk_test_WLvFPL1mC9cr94Sjj6wxvBPN')
+const stripe   = Stripe('pk_live_RDs7HA8mAysGHsUGXsiFxslE')
 const elements = stripe.elements()
 const card     = elements.create('card', {
 	style: {
