@@ -79,7 +79,8 @@ const collectAndSubmit = (token) => {
 				onfailure(r.message)
 			}
 		})
-		.catch(() => {
+		.catch(e => {
+			console.warn(e)
 			onfailure('A server error occurred.')
 		})
 }
