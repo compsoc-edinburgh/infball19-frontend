@@ -79,6 +79,16 @@ form#ticketform {
 		min-width: 65vw;
 	}
 }
+
+.form-front {
+	opacity: 1;
+	transition: opacity 1s cubic-bezier(0,0,0.3,1);
+}
+
+.form-flipper--flipped > .form-front {
+	opacity: 0;
+}
+
 .form-back, .form-front {
 	background-color: white;
 	transform-style: preserve-3d;
