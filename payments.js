@@ -14,10 +14,13 @@ card.mount('#card-element')
 
 card.addEventListener('change', ({error}) => {
 	const displayError = document.querySelector('#card-errors')
+	const submitButton = document.querySelector('[type="submit"]')
 	if (error) {
 		displayError.textContent = error.message
+		submitButton.classList.add('disabled')
 	} else {
 		displayError.textContent = ''
+		submitButton.classList.remove('disabled')
 	}
 })
 
