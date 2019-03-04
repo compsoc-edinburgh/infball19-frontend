@@ -207,6 +207,6 @@ hr {
 	font-size: 0.75em;
 }
 
-[type="checkbox"] {
+* {
 	backface-visibility: hidden !important;
 }
