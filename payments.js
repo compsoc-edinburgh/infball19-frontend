@@ -37,7 +37,7 @@ const collectFields = () => {
 		noalcohol: extract('noalcohol').checked,
 		specialreqs: extract('othernotes').value,
 		staffcode: extract('invitecode').value,
-		mealtype: dietreqs
+		mealtypes: dietreqs
 	}
 
 	return fields
