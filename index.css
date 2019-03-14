@@ -232,3 +232,7 @@ hr {
 * {
 	backface-visibility: hidden !important;
 }
+
+.demandbanner { 
+    padding: 20px;
+}
