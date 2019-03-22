@@ -42,30 +42,30 @@
 		<div class="form-container">
 			<div class="form-flipper">
 				<div class="form-front z-depth-4">
-                    <div class="demandbanner white-text deep-orange darken-1">Due to demand, tickets are being issued on an invite-only basis.</div>
-					<form action="" method="post" id="ticketform">
+                    <div class="demandbanner cyan accent-3">Ticket sales have ended. See you at the event!</div>
+					<form action="" method="post" id="ticketform" class="form--disabled">
 						<h4> Purchase a ticket <span id="tickets-remaining"></span></h4>
 						<h5> Basic information </h5>
 						<div class="input-field">
-							<input type="text" value="" placeholder="Infer Matics" id="full-name" required name="full-name">
+							<input type="text" value="" placeholder="Infer Matics" id="full-name" required name="full-name" disabled>
 							<label for="full-name">Full Name</label>
 						</div>
 
 						<div class="input-field">
-							<input type="text" placeholder="s1234567" value="" name="uun" id="uun">
+							<input type="text" placeholder="s1234567" value="" name="uun" id="uun" disabled>
 							<label for="uun">UUN</label>
 							<span class="helper-text">If you are not a member of the university of Edinburgh and do not have a uun, please get in contact with us at <a href="mailto:infball@comp-soc.com">infball@comp-soc.com</a>.</span>
 						</div>
 
 						<div class="input-field">
 							<label for="email">Email address</label>
-							<input type="email" class="text" value="" name="email" id="email" placeholder="s1234567@ed.ac.uk" required>
+							<input type="email" class="text" value="" name="email" id="email" placeholder="s1234567@ed.ac.uk" required disabled>
 							<span class="helper-text">We will only share this email address with our payment provider.</span>
 						</div>
 
 						<div class="input-field">
 							<label>
-								<input type="checkbox" name="noalcohol"/>
+								<input type="checkbox" name="noalcohol" disabled/>
 								<span>Place me at the alcohol-free table.</span>
 							</label>
 						</div>
@@ -155,25 +155,25 @@
 							<div class="row margin-top-1em">
 								<div class="col s6">
 									<label>
-										<input type="checkbox" name="vegetarian"/>
+										<input type="checkbox" name="vegetarian" disabled/>
 										<span>Vegetarian</span>
 									</label>
 								</div>
 								<div class="col s6">
 									<label>
-										<input type="checkbox" name="vegan"/>
+										<input type="checkbox" name="vegan" disabled/>
 										<span>Vegan</span>
 									</label>
 								</div>
 								<div class="col s6">
 									<label>
-										<input type="checkbox" name="glutenfree"/>
+										<input type="checkbox" name="glutenfree" disabled/>
 										<span>Gluten-free</span>
 									</label>
 								</div>
 								<div class="col s6">
 									<label>
-										<input type="checkbox" name="lactosefree"/>
+										<input type="checkbox" name="lactosefree" disabled/>
 										<span>Lactose-free</span>
 									</label>
 								</div>
@@ -181,12 +181,12 @@
 						</div>
 
 						<div class="input-field">
-							<textarea class="materialize-textarea" name="othernotes" id="othernotes" placeholder="Any other special requirements?"></textarea>
+							<textarea class="materialize-textarea" name="othernotes" id="othernotes" placeholder="Any other special requirements?" disabled></textarea>
 							<label for="othernotes">Other notes</label>
 						</div>
 
 						<div class="input-field col s6">
-							<input name="invitecode" type="text" id="invitecode" value="" class="validate">
+							<input name="invitecode" type="text" id="invitecode" value="" class="validate" disabled>
 							<label for="invitecode">Invite code</label>
 							<div class="helper-text">If you have an invite code, please enter it here.</div>
 						</div>
@@ -203,7 +203,7 @@
 							</div>
 						</div>
 
-						<button class="btn-large waves-effect waves-light disabled" type="submit" name="action" >Submit</button>
+						<button class="btn-large waves-effect waves-light disabled" type="submit" name="action" disabled>Submit</button>
 					</form>
 				</div>
 				<div class="form-back">
@@ -270,7 +270,7 @@
 					</div>
 				</div>
 			</div>
-			<script defer src="payments.js" type="text/javascript"></script>
+			<!--script defer src="payments.js" type="text/javascript"></script-->
 			<script src="index.js" type="text/javascript"></script>
 	</body>
 

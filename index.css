@@ -236,3 +236,8 @@ hr {
 .demandbanner { 
     padding: 20px;
 }
+
+.form--disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
