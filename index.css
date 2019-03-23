@@ -240,4 +240,8 @@ hr {
 .form--disabled {
     pointer-events: none;
     opacity: 0.2;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
